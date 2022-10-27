@@ -7,11 +7,42 @@
     <link rel="icon" type="image/x-icon" href="../asset/images/home.ico">
 
     <title> <%= title %> </title>
+    <script src="https://kit.fontawesome.com/a3d4c2b55e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 
 </head>
 <body>
-    <h1>
-        codeial <%= title %>
-    </h1>
+    <div class="container">
+    <div class = "header">
+         <h1>
+          Todo App
+         </h1>
+    </div>
+    <div class="mainbody">
+       <form action="/create-list" method="post">
+        <input type="textarea" required name="description" placeholder="What do you need to do?" class="todo_desc">
+        <div class = "todoselectmenu">
+           <select name="category" required id = "todomenu">
+            <option value="" disabled selected>Select your option</option>
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Others">Others</option>
+           </select>
+           <span class = "custom-arrow"><i class="fa-solid fa-angle-down fa-xl"></i></span>
+           <input class="datesValues" type="date" name="dueDate" placeholder="Due data dd/mm/yyyy" required>
+           <span class = "custom-arrow calender"><i class="fa-solid fa-calendar-days fa-xl"></i></span>
+        </div>
+        <div class="btncontainer">
+            <button  class = "btn add" type="submit" id = "addbutton" title="Add Task"><i class="fa-solid fa-plus"></i></button>
+            <button  class = "btn del" type="submit" id = "deletebutton" title="Delete Task"><i class="fa-solid fa-trash"></i></button>
+        </div>
+       </form>
+    </div>
+    </div>
+   
 </body>
 </html>
